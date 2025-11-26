@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:project_akhir/controller/detail_controller.dart';
 import 'package:project_akhir/services/spaceflightnews_service.dart';
 import 'package:project_akhir/views/favorit.dart';
 

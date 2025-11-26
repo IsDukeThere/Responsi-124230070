@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:project_akhir/models/news.dart';
 
 class Favorit extends StatefulWidget {
   final String username;
@@ -42,7 +43,7 @@ class _FavoritState extends State<Favorit> {
 
     final box = snapshot.data!;
     return Scaffold(
-      appBar: AppBar(title: Text("Watchlist ${widget.username}",
+      appBar: AppBar(title: Text("Favorit ${widget.username}",
       style: TextStyle(
         color: Colors.white
         ),
@@ -52,29 +53,21 @@ class _FavoritState extends State<Favorit> {
         builder: (context, Box<Favorit> box, _) {
           if (box.isEmpty) {
             return const Center(child: Text(
-              "Belum ada film di Watchlist",
+              "Belum ada Favorit",
               style:TextStyle(color: Colors.white),
               )
             );
           }
 
-          final movies = box.values.toList();
+          final news = box.values.toList();
 
           return ListView.builder(
-            itemCount: movies.length,
+            itemCount: news.length,
             itemBuilder: (context, index) {
-              final m = movies[index];
+              final m = news[index];
               return ListTile(
-                onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Detail(id: m.id, movie: m, username: widget.username,),
-                      ),
-                    );
-                  },
                 leading: Image.network(
-                  "https://image.tmdb.org/t/p/w200${m.image}",
+                  "${m.image}",
                   fit: BoxFit.cover,
                 ),
                 title: Text(
@@ -84,7 +77,7 @@ class _FavoritState extends State<Favorit> {
                   ),
                 ),
                 subtitle: Text(
-                  "Rating: ${m.rating.toStringAsFixed(1)}",
+                  "News Site: ${m.newsSite}",
                   style: TextStyle(
                     color: Colors.white
                   ),
