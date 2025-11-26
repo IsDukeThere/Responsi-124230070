@@ -6,7 +6,7 @@ class DetailController {
 
   DetailController({required this.spaceflightnews});
 
-  Future<NewsDetail> getMovieDetail(int id) async {
-    return await spaceflightnews.getMovieDetail(id);
+  Future<NewsDetail> getNewsDetail(int id) async {
+    return await spaceflightnews.getNewsDetail(id);
   }
 }

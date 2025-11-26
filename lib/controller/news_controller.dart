@@ -9,7 +9,7 @@ class NewsController {
   });
 
   Future<List<News>> getMovies({int page = 1}) async {
-    final movies = await spaceflightnews.getMovieData(page: page);
+    final movies = await spaceflightnews.getNewsData(page: page);
     return movies.map((movies) {
       return News(
         id: movies.id, 

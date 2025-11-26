@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:project_akhir/views/detail.dart';
 
 class Favorit extends StatefulWidget {
   final String username;

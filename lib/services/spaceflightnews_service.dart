@@ -29,7 +29,7 @@ class Spaceflightnews {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      return NewsDetail.fromJson(data);
+      return data;
     } else {
       throw Exception("Gagal mengambil detail film dengan ID $id");
     }
